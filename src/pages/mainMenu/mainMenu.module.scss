@@ -1,0 +1,14 @@
+.main-menu-container {
+    height: 100vh;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+    .title {
+        font-size: 60px;
+        font-weight: 600;
+        color: white;
+    }
+}

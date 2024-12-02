@@ -1,0 +1,133 @@
+@keyframes throw-card {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    5% {
+        transform: translate(5px, -3px) rotate(1.5deg);
+        opacity: 0.99;
+    }
+    10% {
+        transform: translate(10px, -6px) rotate(3deg);
+        opacity: 0.98;
+    }
+    15% {
+        transform: translate(15px, -9px) rotate(4.5deg);
+        opacity: 0.96;
+    }
+    20% {
+        transform: translate(20px, -12px) rotate(6deg);
+        opacity: 0.94;
+    }
+    25% {
+        transform: translate(25px, -15px) rotate(7.5deg);
+        opacity: 0.92;
+    }
+    30% {
+        transform: translate(30px, -18px) rotate(9deg);
+        opacity: 0.9;
+    }
+    35% {
+        transform: translate(40px, -24px) rotate(11deg);
+        opacity: 0.88;
+    }
+    40% {
+        transform: translate(50px, -30px) rotate(15deg);
+        opacity: 0.85;
+    }
+    45% {
+        transform: translate(60px, -36px) rotate(17deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(70px, -42px) rotate(20deg);
+        opacity: 0.75;
+    }
+    55% {
+        transform: translate(85px, -51px) rotate(23deg);
+        opacity: 0.7;
+    }
+    60% {
+        transform: translate(100px, -60px) rotate(25deg);
+        opacity: 0.65;
+    }
+    65% {
+        transform: translate(110px, -66px) rotate(27deg);
+        opacity: 0.6;
+    }
+    70% {
+        transform: translate(120px, -72px) rotate(30deg);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translate(135px, -81px) rotate(32deg);
+        opacity: 0.4;
+    }
+    80% {
+        transform: translate(150px, -90px) rotate(35deg);
+        opacity: 0.3;
+    }
+    85% {
+        transform: translate(165px, -96px) rotate(37deg);
+        opacity: 0.2;
+    }
+    90% {
+        transform: translate(180px, -96px) rotate(40deg);
+        opacity: 0.15;
+    }
+    95% {
+        transform: translate(190px, -98px) rotate(43deg);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translate(200px, -100px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.card-container {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    border: 1px solid white;
+    position: relative; 
+
+    &.matched {
+        animation: throw-card 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        pointer-events: none; 
+    }
+
+    .card-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+
+        &.flipped {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .card-front,
+    .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-front img,
+    .card-back img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-back {
+        transform: rotateY(180deg);
+    }
+}

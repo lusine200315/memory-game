@@ -1,0 +1,10 @@
+$font-share-tech-mono-url: '../assets/fonts/ShareTechMono-Regular.ttf';
+
+$font-share-tech: 'Share Tech Mono';
+
+@font-face {
+  font-family: $font-share-tech, monospace;
+  src: url($font-share-tech-mono-url) format('ttf');
+  font-style: normal;
+  font-display: swap;
+}

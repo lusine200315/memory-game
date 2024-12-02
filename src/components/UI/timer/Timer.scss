@@ -1,0 +1,19 @@
+@use '../../../styles/variables.scss' as *;
+
+.timer-container {
+    color: white;
+    font-size: 55px;
+    background: #0f3854;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #0e0e0e 70%);
+    background-size: 100%;
+
+    .timer {
+        font-size: 80px;
+        color: #daf6ff;
+        text-align: center;
+        letter-spacing: 0.05em;
+        font-family: $font-share-tech, monospace;
+        text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+    }
+}
+
